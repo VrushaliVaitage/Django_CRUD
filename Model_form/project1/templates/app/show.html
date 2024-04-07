@@ -1,0 +1,40 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+<title>show employee page</title>
+{% endblock %}
+
+
+{% block content %}
+
+<table class="table table-danger">
+    <thead>
+        
+        <tr>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        
+    </thead>
+    <tbody>
+        {% for obj in form %}
+        <tr>
+            <td>{{obj.name}}</td>
+            <td>{{obj.sal}}</td>
+            <td>{{obj.email}}</td>
+            <td>
+                <a href="{% url 'update_url' obj.id %}"><button class="btn btn-success">Update</button></a>
+                <a href="{% url 'delete_url' obj.id %}"><button class="btn btn-danger" >delete</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
+

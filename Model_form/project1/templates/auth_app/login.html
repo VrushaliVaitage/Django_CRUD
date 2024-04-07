@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+<title>add employee page</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+       <label for="u">Username</label>
+       <input id="u" type="text" name="un">
+       <br>
+       <label for="p">password</label>
+       <input  type="password" name="pw">
+       <br>
+        <input type="submit"  class="btn btn-success">
+    </form>
+    </div>
+{% endblock %}

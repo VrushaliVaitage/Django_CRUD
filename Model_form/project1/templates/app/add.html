@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+
+<title>add employee page</title>
+
+{% endblock %}
+
+
+{% block content %}
+<br>
+<div class="container">
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class="btn btn-success">
+    </form>
+    </div>
+
+{% endblock %}
